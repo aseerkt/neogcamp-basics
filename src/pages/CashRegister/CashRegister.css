@@ -1,0 +1,71 @@
+.cash-register {
+  display: grid;
+  gap: 2rem;
+  grid-template-columns: 1;
+}
+
+.form-error {
+  color: red;
+  font-weight: 600;
+}
+
+.return-cash {
+  display: flex;
+  align-items: center;
+  background-color: #f4f4f4;
+  border-radius: 0.3rem;
+  padding: 0.5rem;
+}
+
+.return-cash strong {
+  display: inline-block;
+  margin-right: 1rem;
+}
+
+.cash-count-wrapper {
+  display: grid;
+  gap: 1rem;
+  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+}
+
+.cash-count-wrapper li div {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0.5rem;
+  border-radius: 0.3rem;
+  text-align: center;
+  border: 2px solid green;
+  transition: 0.3s all ease;
+}
+
+.cash-count-wrapper li div.active {
+  background-color: lightgreen;
+}
+
+.cash-count-wrapper li div.active strong {
+  border: 1px dashed darkgreen;
+}
+
+.cash-count-wrapper li div strong {
+  display: inline-block;
+  font-size: 2rem;
+  flex: 3;
+  background-color: lightgreen;
+  padding: 0.5rem;
+  border-radius: 999px;
+}
+
+.cash-count-wrapper li div span {
+  flex: 2;
+  display: inline-block;
+  font-size: 1.5rem;
+  font-weight: 500;
+  color: darkgreen;
+}
+
+@media screen and (min-width: 768px) {
+  .cash-register {
+    grid-template-columns: 40% auto;
+  }
+}
