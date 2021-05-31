@@ -1,0 +1,28 @@
+.navbar {
+  height: 60px;
+  position: sticky;
+  top: 0;
+  width: 100%;
+  box-shadow: 0 0 3px 2px rgba(0, 0, 0, 0.2);
+}
+
+.navbar .container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 0;
+}
+
+ul {
+  display: flex;
+}
+
+ul li a {
+  display: inline-block;
+  margin-left: 1rem;
+}
+
+ul li a svg {
+  color: #000;
+  fill: #000;
+}
