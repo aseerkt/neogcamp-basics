@@ -1,18 +1,24 @@
+import PropTypes from 'prop-types';
 import { Link } from 'react-router-dom';
 import './HomeItem.css';
 
-function HomeItem({ path, name }) {
-  if (!name) return null;
+function HomeItem({ routeData }) {
+  if (!routeData.name) return null;
 
   return (
-    <li>
-      <Link to={path}>
+    <li className='home-li'>
+      <img src={`${routeData.path}.jpg`} alt={routeData.name} />
+      <Link to={routeData.path}>
         <article className='home-item'>
-          <h2>{name}</h2>
+          <h2>{routeData.name}</h2>
         </article>
       </Link>
     </li>
   );
 }
+
+HomeItem.propTypes = {
+  routeData: PropTypes.object.isRequired,
+};
 
 export default HomeItem;

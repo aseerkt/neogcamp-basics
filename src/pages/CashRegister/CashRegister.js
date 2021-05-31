@@ -1,3 +1,4 @@
+import { useEffect } from 'react';
 import { useState } from 'react';
 import ProjectWrapper from '../../components/ProjectWrapper';
 import './CashRegister.css';
@@ -16,22 +17,30 @@ const countCash = (amount) => {
   return cashCount;
 };
 
+const initialCashCount = {
+  1: 0,
+  5: 0,
+  10: 0,
+  20: 0,
+  100: 0,
+  500: 0,
+  2000: 0,
+};
+
 function CashRegister() {
+  const [show, setShow] = useState(false);
   const [formData, setFormData] = useState({ bill: '', userCash: '' });
   const [formError, setFormError] = useState(null);
-  const [cashCount, setCashCount] = useState({
-    1: 0,
-    5: 0,
-    10: 0,
-    20: 0,
-    100: 0,
-    500: 0,
-    2000: 0,
-  });
+  const [cashCount, setCashCount] = useState(initialCashCount);
 
   let { bill, userCash } = formData;
-  const onChange = (e) =>
+  const onChange = (e) => {
     setFormData((prev) => ({ ...prev, [e.target.name]: e.target.value }));
+    if (e.target.name === 'bill') {
+      if (e.target.value > 0) setShow(true);
+      else setShow(false);
+    }
+  };
 
   const onSubmit = (e) => {
     e.preventDefault();
@@ -44,16 +53,28 @@ function CashRegister() {
       return;
     }
     const amoutToReturn = cashUserHas - billToPay;
-    setCashCount((prev) => ({ ...prev, ...countCash(amoutToReturn) }));
+    setCashCount((prev) => ({
+      ...initialCashCount,
+      ...countCash(amoutToReturn),
+    }));
   };
 
+  useEffect(() => {
+    if (!bill || !userCash) {
+      setCashCount(initialCashCount);
+    }
+  }, [bill, userCash]);
+
   return (
-    <ProjectWrapper title='Cash Register'>
+    <ProjectWrapper
+      title='Cash Register'
+      projectLink='https://github.com/neogcamp/build/blob/main/basics/cash-register-manager.md'
+    >
       <div className='cash-register'>
         <aside>
           <form onSubmit={onSubmit}>
             <div className='form-control'>
-              <label htmlFor='bill'>Enter bill amount</label>
+              <label htmlFor='bill'>Bill Amount</label>
               <input
                 id='bill'
                 type='number'
@@ -61,27 +82,40 @@ function CashRegister() {
                 name='bill'
                 value={bill}
                 onChange={onChange}
+                placeholder='Enter bill amount'
               />
             </div>
-            <div className='form-control'>
-              <label htmlFor='user-cash'>Enter cash amount given by user</label>
-              <input
-                id='user-cash'
-                type='number'
-                min='1'
-                name='userCash'
-                value={userCash}
-                onChange={onChange}
-              />
+            {show && (
+              <>
+                <div className='form-control'>
+                  <label htmlFor='user-cash'>Cash Given</label>
+                  <input
+                    id='user-cash'
+                    type='number'
+                    min='1'
+                    name='userCash'
+                    value={userCash}
+                    onChange={onChange}
+                    placeholder='Enter cash amount given by user'
+                  />
+                </div>
+                <div className='form-control return-cash'>
+                  <strong>Cash to Return : </strong>
+                  <span
+                    style={{ color: userCash - bill > 0 ? 'green' : 'red' }}
+                  >
+                    {' '}
+                    {userCash > 0 ? userCash - bill : '__'}
+                  </span>
+                </div>
+              </>
+            )}
+            <div className='bottom-stuff'>
+              <button disabled={!bill || !userCash} type='Submit'>
+                Calculate Note Count
+              </button>
+              <p className='form-error'>{formError}</p>
             </div>
-            <div className='form-control return-cash'>
-              <strong>Cash to Return : </strong>
-              <span> {userCash - bill}</span>
-            </div>
-            <button disabled={!bill || !userCash} type='Submit'>
-              Calculate Note Count
-            </button>
-            <p className='form-error'>{formError}</p>
           </form>
         </aside>
         <ul className='cash-count-wrapper'>

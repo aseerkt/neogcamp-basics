@@ -15,5 +15,5 @@ export const ROUTES_DATA = [
     name: 'Palindrome Birthday',
   },
   { path: '/triangles', component: Triangles, name: 'Learn Triangles' },
-  { path: '/profit-loss', component: ProfitOrLoss, name: 'Profile or Loss' },
+  { path: '/profit-loss', component: ProfitOrLoss, name: 'Profit or Loss' },
 ];

@@ -5,10 +5,10 @@ import './Home.css';
 function Home() {
   return (
     <main className='home'>
-      <h1>Welcome to NEOGCAMP BASICS PROJECTS</h1>
+      <h1>Welcome to NeoGCamp Level One</h1>
       <ul className='projects-wrapper'>
-        {ROUTES_DATA.map(({ path, name }, i) => (
-          <HomeItem key={path + i} path={path} name={name} />
+        {ROUTES_DATA.map((data, i) => (
+          <HomeItem key={data.path + i} routeData={data} />
         ))}
       </ul>
     </main>

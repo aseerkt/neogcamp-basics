@@ -4,6 +4,17 @@
   grid-template-columns: 1;
 }
 
+aside,
+aside form {
+  height: 100%;
+}
+
+aside form {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
 .form-error {
   color: red;
   font-weight: 600;
@@ -25,7 +36,7 @@
 .cash-count-wrapper {
   display: grid;
   gap: 1rem;
-  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
 }
 
 .cash-count-wrapper li div {
