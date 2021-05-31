@@ -1,0 +1,24 @@
+.lucky-birth {
+  display: grid;
+  gap: 2rem;
+  grid-template-columns: 1;
+}
+
+.lucky-form {
+  min-height: 270px;
+  height: 100%;
+}
+
+.lucky-graphics {
+  min-height: 270px;
+  height: 100%;
+  background-color: lightgreen;
+  display: grid;
+  place-items: center;
+}
+
+@media screen and (min-width: 768px) {
+  .lucky-birth {
+    grid-template-columns: 1fr 1fr;
+  }
+}

@@ -26,6 +26,7 @@ ul li a {
 }
 
 ul li a svg {
+  height: 1rem;
+  width: 1rem;
   color: #000;
-  fill: #000;
 }

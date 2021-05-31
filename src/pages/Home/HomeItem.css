@@ -25,11 +25,12 @@
 }
 
 .home-li:hover::before {
-  background-color: rgba(116, 113, 113, 0.6);
+  background-color: rgba(156, 154, 154, 0.6);
 }
 
 .home-li:hover h2 {
   color: #111;
+  font-weight: 400;
 }
 
 .home-li a {

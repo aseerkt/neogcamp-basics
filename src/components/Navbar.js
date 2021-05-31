@@ -20,7 +20,7 @@ function Navbar() {
                 rel='noreferrer'
                 href='https://github.com/aseerkt/neogcamp-basics'
               >
-                <FontAwesomeIcon icon={faGithub} />
+                <FontAwesomeIcon size='2x' icon={faGithub} />
               </a>
             </li>
             <li>
@@ -29,7 +29,7 @@ function Navbar() {
                 rel='noreferrer'
                 href='https://aseerkt.vercel.app'
               >
-                <FontAwesomeIcon icon={faGlobe} />
+                <FontAwesomeIcon size='2x' icon={faGlobe} />
               </a>
             </li>
           </ul>

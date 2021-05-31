@@ -1,8 +1,6 @@
 # NeoGCamp LevelOne Projects
 
-> Covers all projects in level one Projects in NeoGCamp
-
-- Projects are provided by [neogcamp/build](https://github.com/neogcamp/build)
+> Projects provided by NeoGCamp [neogcamp/build](https://github.com/neogcamp/build)
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 

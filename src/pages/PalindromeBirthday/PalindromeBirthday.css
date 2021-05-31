@@ -1,0 +1,11 @@
+.palindrome-birth {
+  display: grid;
+  gap: 2rem;
+  grid-template-columns: 1;
+}
+
+@media screen and (min-width: 768px) {
+  .palindrome-birth {
+    grid-template-columns: 1fr 1fr;
+  }
+}
