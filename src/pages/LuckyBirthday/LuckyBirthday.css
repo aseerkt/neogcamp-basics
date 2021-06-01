@@ -5,12 +5,11 @@
 }
 
 .lucky-form {
-  min-height: 270px;
   height: 100%;
 }
 
 .lucky-graphics {
-  min-height: 270px;
+  padding: 2rem;
   height: 100%;
   background-color: lightgreen;
   display: grid;

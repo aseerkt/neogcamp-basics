@@ -4,6 +4,16 @@
   grid-template-columns: 1;
 }
 
+.pal-result {
+  font-weight: 500;
+  display: grid;
+  place-items: center;
+  background-color: lightgreen;
+  padding: 2rem;
+  line-height: 1.6;
+  color: darkgreen;
+}
+
 @media screen and (min-width: 768px) {
   .palindrome-birth {
     grid-template-columns: 1fr 1fr;

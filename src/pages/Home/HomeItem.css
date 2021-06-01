@@ -1,4 +1,5 @@
 .home-li {
+  width: 100%;
   position: relative;
   height: 290px;
 }
@@ -51,7 +52,7 @@
 }
 
 .home-item h2 {
-  width: 30%;
+  width: 35%;
   font-weight: 300;
   margin: 0 0 20px 20px;
   text-transform: uppercase;

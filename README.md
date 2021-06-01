@@ -1,4 +1,4 @@
-# NeoGCamp LevelOne Projects
+# NeoGCamp LevelZero Projects
 
 > Projects provided by NeoGCamp [neogcamp/build](https://github.com/neogcamp/build)
 
@@ -7,9 +7,9 @@ This project was bootstrapped with [Create React App](https://github.com/faceboo
 ## Projects Completed
 
 - [x] Cash Register
-- [ ] Lucky Birthday
+- [x] Lucky Birthday
+- [x] Palindrome Birthday
 - [ ] Learn Triangles
-- [ ] Palindrome Birthday
 - [ ] Profit or Loss
 
 ### Available Scripts
