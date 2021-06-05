@@ -9,7 +9,7 @@ function Navbar() {
     <header className='navbar'>
       <nav className='container'>
         <Link to='/'>
-          <h1>neogcamp basics</h1>
+          <h1>neogcamp zero</h1>
         </Link>
 
         <div className='navbar-right'>

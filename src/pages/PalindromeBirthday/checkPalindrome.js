@@ -19,7 +19,6 @@ function getAllCases(dob) {
     'YYYY-DD-MM': [splitArr[0], splitArr[2], splitArr[1]].join('-'),
     'DD-MM-YYYY': splitArr.reverse().join('-'),
   };
-  console.log(formatsWithDate);
   return formatsWithDate;
 }
 
@@ -64,9 +63,25 @@ function getPrevDate(dob) {
   }${p_day}`;
 }
 
+function getDifferenceInDates(date1, date2) {
+  const diffTime = Math.abs(date2 - date1);
+  const diffDays = Math.ceil(diffTime / (1000 * 60 * 60 * 24));
+  return diffDays;
+}
+
+function getDateFromFormat(date, format) {
+  const splitDate = date.split('-');
+  const splitFormat = format.split('-');
+  const yearIndex = splitFormat.findIndex((v) => v === 'YYYY');
+  const monthIndex = splitFormat.findIndex((v) => v === 'MM');
+  const dayIndex = splitFormat.findIndex((v) => v === 'DD');
+  return new Date(
+    [splitDate[yearIndex], splitDate[monthIndex], splitDate[dayIndex]].join('-')
+  );
+}
+
 function calcPalindrome(dob, setMessage, setLoading) {
   const isPalindrome = checkPalForAllCases(dob);
-  console.log({ isPalindrome });
   if (isPalindrome.isPal) {
     setMessage('Yay! your DOB is palindrome');
     setLoading(false);
@@ -98,7 +113,14 @@ function calcPalindrome(dob, setMessage, setLoading) {
     }
   }
 
-  setMessage(`Nearest Palindrome date is ${pal_date} for format ${pal_format}`);
+  const diffDays = getDifferenceInDates(
+    getDateFromFormat(dob, 'YYYY-MM-DD'),
+    getDateFromFormat(pal_date, pal_format)
+  );
+
+  setMessage(
+    `Nearest Palindrome date is ${pal_date} (${pal_format}) which is ${diffDays} days away from your date of birth`
+  );
   setLoading(false);
   return;
 }

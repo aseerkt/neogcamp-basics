@@ -10,8 +10,13 @@ function App() {
       <Navbar />
       <div className='container'>
         <Switch>
-          {ROUTES_DATA.map((prop, i) => (
-            <Route key={i} exact {...prop} />
+          {ROUTES_DATA.map(({ path, ...prop }, i) => (
+            <Route
+              key={i}
+              exact
+              path={path === '/triangles' ? `${path}/:step` : path}
+              {...prop}
+            />
           ))}
         </Switch>
       </div>

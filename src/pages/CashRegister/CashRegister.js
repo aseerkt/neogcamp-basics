@@ -48,7 +48,7 @@ function CashRegister() {
     const billToPay = parseInt(bill);
     const cashUserHas = parseInt(userCash);
     if (billToPay > cashUserHas) {
-      setFormError('Not enought cash given');
+      setFormError('Given cash is not enough');
       setTimeout(() => setFormError(null), 5000);
       return;
     }

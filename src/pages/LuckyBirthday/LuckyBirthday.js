@@ -10,7 +10,10 @@ function LuckyBirthday() {
   const onSubmit = (e) => {
     e.preventDefault();
     setMessage(null);
-    const lucky = dob.split('-').reduce((a, b) => a + b, 0) % number;
+    const digits = dob.split('-').join('').split('');
+    const digitSum = digits.reduce((a, b) => parseInt(a) + parseInt(b), 0);
+    // console.log(digits, digitSum, number);
+    const lucky = digitSum % number;
     if (lucky === 0) {
       setMessage('Yay! you got lucky');
       return;
@@ -24,7 +27,7 @@ function LuckyBirthday() {
       title='Is Your Birthday Lucky?'
       projectLink='https://github.com/neogcamp/build/blob/main/basics/is-your-birthday-lucky.md'
     >
-      <main className='lucky-birth'>
+      <main className='two-grid'>
         <form className='lucky-form' onSubmit={onSubmit}>
           <div className='form-control'>
             <label htmlFor='dob'>Date of Birth</label>
@@ -51,7 +54,7 @@ function LuckyBirthday() {
             Lucky or not?
           </button>
         </form>
-        <section className='lucky-graphics'>
+        <section className='result'>
           <h3>{message ? message : 'Please fill in data'}</h3>
         </section>
       </main>
