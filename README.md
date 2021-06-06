@@ -1,16 +1,16 @@
-# NeoGCamp LevelZero Projects
+# NeoGCamp Practive Projects
 
-> Projects provided by NeoGCamp [neogcamp/build](https://github.com/neogcamp/build)
+> Practice Projects provided by NeoGCamp [neogcamp/build](https://github.com/neogcamp/build)
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
 ## Projects Completed
 
-- [x] Cash Register
-- [x] Lucky Birthday
-- [x] Palindrome Birthday
-- [ ] Learn Triangles
-- [ ] Profit or Loss
+- [x] [Cash Register](https://github.com/neogcamp/build/blob/main/basics/cash-register-manager.md)
+- [x] [Lucky Birthday](https://github.com/neogcamp/build/blob/main/basics/is-your-birthday-lucky.md)
+- [x] [Palindrome Birthday](https://github.com/neogcamp/build/blob/main/basics/palindrome-birthdays.md)
+- [ ] [Learn Triangles](https://github.com/neogcamp/build/blob/main/basics/learn-triangles.md)
+- [ ] [Profit or Loss](https://github.com/neogcamp/build/blob/main/basics/profit-or-loss.md)
 
 ### Available Scripts
 

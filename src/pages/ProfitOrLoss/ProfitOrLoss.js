@@ -1,5 +1,6 @@
 import { useState } from 'react';
 import ProjectWrapper from '../../components/ProjectWrapper';
+import useFetchStockData from './useFetchStockData';
 
 function ProfitOrLoss() {
   const [stockData, setStockData] = useState({
@@ -7,6 +8,8 @@ function ProfitOrLoss() {
     qty: '',
     date: '',
   });
+
+  const { data } = useFetchStockData();
 
   const { price, qty, date } = stockData;
 
@@ -55,7 +58,9 @@ function ProfitOrLoss() {
             />
           </div>
         </form>
-        <section className='result'></section>
+        <section className='result'>
+          <pre>{JSON.stringify(data, null, 2)}</pre>
+        </section>
       </main>
     </ProjectWrapper>
   );
