@@ -1,33 +1,3 @@
-.angles-showcase {
-  width: 100%;
-  max-width: 300px;
-  justify-content: space-around;
-  align-items: center;
-  margin-bottom: 2rem;
-}
-
-.angles-showcase li {
-  text-align: center;
-  font-weight: 400;
-  background-color: lightgray;
-  padding: 0.7rem;
-  min-width: 60px;
-}
-
-.angles-showcase li:last-child {
-  padding: 0;
-}
-
-.angles-showcase li button {
-  margin-bottom: 0;
-  color: #000;
-  background-color: #fff;
-}
-
-.angles-showcase li button:hover {
-  box-shadow: 0 0 3px 2px rgba(0, 0, 0, 0.7);
-}
-
 .form-control strong {
   color: darkblue;
 }

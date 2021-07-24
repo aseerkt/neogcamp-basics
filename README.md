@@ -1,8 +1,6 @@
-# NeoGCamp Practive Projects
+# React Demo Projects
 
-> Practice Projects provided by NeoGCamp [neogcamp/build](https://github.com/neogcamp/build)
-
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+> Collections of React Demo Projects
 
 ## Projects Completed
 
